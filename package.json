@@ -5,11 +5,25 @@
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "test": "node_modules/.bin/jest",
+    "coverage": "node_modules/.bin/jest --coverage",
+    "test-watch": "node_modules/.bin/jest --watch",
+    "lint": "node_modules/.bin/eslint -c .eslintrc -f table ./app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint && npm run test -- --coverage"
+    }
   },
   "dependencies": {
     "apisauce": "^1.0.3",
+    "enzyme": "^3.10.0",
     "expo": "^33.0.0",
+    "jest-enzyme": "^7.0.2",
+    "nock": "^10.0.6",
+    "prop-types": "^15.7.2",
     "react": "16.8.3",
     "react-dom": "^16.8.6",
     "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
@@ -23,7 +37,36 @@
     "reduxsauce": "^1.1.0"
   },
   "devDependencies": {
-    "babel-preset-expo": "^5.1.1"
+    "babel-preset-expo": "^5.1.1",
+    "enzyme-adapter-react-16": "^1.14.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "husky": "^3.0.0",
+    "jest-expo": "^33.0.2",
+    "jsdom": "^15.1.1",
+    "xhr2": "^0.2.0"
   },
-  "private": true
+  "private": true,
+  "jest": {
+    "preset": "jest-expo",
+    "collectCoverageFrom": [
+      "app/**/*.{js,jsx,mjs}"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "statements": 1,
+        "branches": 1,
+        "functions": 1,
+        "lines": 1
+      }
+    },
+    "setupFilesAfterEnv": ["<rootDir>/app/jest-tests.js"],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/react-native/jest/preprocessor.js"
+    },
+    "transformIgnorePatterns": [
+      "node_modules/(?!react-native|expo|@expo|react-navigation|native-base-shoutem-theme|@shoutem/theme|@shoutem/animation|@shoutem/ui|tcomb-form-native)"
+    ]
+  }
 }
