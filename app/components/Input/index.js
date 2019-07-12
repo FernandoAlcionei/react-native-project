@@ -25,14 +25,13 @@ class Input extends Component {
       outputRange: ['rgb(166, 166, 166)', 'rgb(232, 17, 35)'],
     });
 
-    const { font, size, isInvalid, styleProps } = this.props;
+    const { size, isInvalid, styleProps } = this.props;
 
     return (
       <View>
         <TextInput
           placeholderTextColor="#C5C5C5"
           style={{
-            fontFamily: font,
             fontSize: size,
             borderColor: isInvalid ? '#E81123' : '#A6A6A6',
             color: '#333333',
@@ -48,7 +47,6 @@ class Input extends Component {
 }
 
 Input.propTypes = {
-  font: PropTypes.string,
   size: PropTypes.number,
   styleProps: PropTypes.object,
   isInvalid: PropTypes.bool,

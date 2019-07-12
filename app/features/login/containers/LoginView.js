@@ -16,10 +16,10 @@ class LoginView extends Component {
     };
   }
 
-  loginUser = (isLoginTouchId) => {
+  loginUser = () => {
     const { login } = this.props;
     const { username, password } = this.state;
-    
+
     login({ username, password });
   };
 

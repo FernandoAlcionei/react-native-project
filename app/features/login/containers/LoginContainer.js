@@ -10,8 +10,6 @@ const mapStateToProps = state => ({
   msgDeErro: state.loginReducer.msgDeErro,
 });
 
-const mapDispatchToProps = dispatch => ({
-  login: user => dispatch(login(user))
-});
+const mapDispatchToProps = dispatch => ({ login: user => dispatch(login(user)) });
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginContainer);

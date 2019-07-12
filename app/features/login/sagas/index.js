@@ -5,4 +5,4 @@ import Api from '../../../api';
 
 const api = Api.create();
 
-export const loginSagas = [ takeLatest(types.LOGIN, login, api) ];
+export const loginSagas = [takeLatest(types.LOGIN, login, api)];
