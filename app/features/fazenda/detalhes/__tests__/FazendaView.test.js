@@ -31,7 +31,7 @@ describe('Teste da feature FazendaView', () => {
     expect(wrapper.instance().renderVistorias(mockFazenda)).toBeNull();
   });
 
-  it('Deve direcionar o usuário para a view de pacuária quando for clicado no botão "Pecuária"', () => {
+  it('Deve direcionar o usuário para a view de animais quando for clicado no botão "Animais"', () => {
     let route;
     let fazendaId;
 
@@ -40,9 +40,9 @@ describe('Teste da feature FazendaView', () => {
       fazendaId = params.id;
     };
 
-    wrapper.find('#btn-pecuaria').first().props().onPress();
+    wrapper.find('#btn-animais').first().props().onPress();
 
-    expect(route).toEqual('pecuaria');
+    expect(route).toEqual('animais');
     expect(fazendaId).toEqual(fazenda.id);
   });
 });

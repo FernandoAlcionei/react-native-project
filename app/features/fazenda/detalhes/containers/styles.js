@@ -28,11 +28,11 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   infoFazenda: { marginHorizontal: 15 },
-  containerBtnPecuaria: {
+  containerBtnAnimais: {
     justifyContent: 'center',
     alignItems: 'center',
   },
-  btnPecuaria: {
+  btnAnimais: {
     flexWrap: 'wrap',
     alignItems: 'flex-start',
     flexDirection: 'row',
@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     marginVertical: 15,
   },
-  labelBtnPecuaria: {
+  labelBtnAnimais: {
     color: COLOR_PRIMARY,
     marginVertical: 8,
     marginHorizontal: 25,

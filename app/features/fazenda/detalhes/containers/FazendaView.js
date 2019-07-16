@@ -20,7 +20,10 @@ class FazendaView extends Component {
     this.state = {};
   }
 
-  acessarPecuaria = fazenda => Actions.push('pecuaria', { id: fazenda.id });
+  visualizarAnimais = (fazenda) => {
+    alert('Em desenvolvimento');
+    Actions.push('animais', { id: fazenda.id });
+  }
 
   renderVistorias = (fazenda) => {
     if (fazenda.vistorias.length) {
@@ -61,10 +64,10 @@ class FazendaView extends Component {
             </TextView>
           </View>
 
-          <View style={styles.containerBtnPecuaria}>
-            <TouchableOpacity id="btn-pecuaria" style={styles.btnPecuaria} onPress={() => this.acessarPecuaria(fazenda)}>
-              <TextView styleProps={styles.labelBtnPecuaria}>
-                Pecuária
+          <View style={styles.containerBtnAnimais}>
+            <TouchableOpacity id="btn-animais" style={styles.btnAnimais} onPress={() => this.visualizarAnimais(fazenda)}>
+              <TextView styleProps={styles.labelBtnAnimais}>
+                Animais
               </TextView>
             </TouchableOpacity>
           </View>
