@@ -1,15 +1,17 @@
 import { StyleSheet } from 'react-native';
 import AppStyles from '../../../config/styles';
 
+const { color: { COLOR_RED } } = AppStyles;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
   },
-  logo: { marginTop: 165 },
+  logo: { marginTop: 165, width: 80, height: 80 },
   inputUsuario: {
-    marginTop: 39.7,
+    marginTop: 40,
     paddingLeft: 17,
     paddingRight: 17,
     width: 320,
@@ -23,7 +25,7 @@ const styles = StyleSheet.create({
   msgErro: {
     width: 320,
     marginTop: 7,
-    color: AppStyles.color.COLOR_RED,
+    color: COLOR_RED,
   },
   containerBtn: { marginTop: 30 },
   footer: {

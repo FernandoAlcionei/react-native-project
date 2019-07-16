@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { View, TextInput, Animated } from 'react-native';
 import AppStyles from '../../config/styles';
 
+const { fontSizes: { FONT_SIZE_DEFAULT }, color: { COLOR_DARK_GRAY, COLOR_RED } } = AppStyles;
+
 class Input extends Component {
   constructor(props) {
     super(props);
@@ -33,8 +35,8 @@ class Input extends Component {
           placeholderTextColor="#C5C5C5"
           style={{
             fontSize: size,
-            borderColor: isInvalid ? '#E81123' : '#A6A6A6',
-            color: '#333333',
+            borderColor: isInvalid ? COLOR_RED : '#A6A6A6',
+            color: COLOR_DARK_GRAY,
             borderWidth: 1,
             height: 50,
             ...styleProps,
@@ -53,7 +55,7 @@ Input.propTypes = {
 };
 
 Input.defaultProps = {
-  size: AppStyles.fontSizes.FONT_SIZE_DEFAULT,
+  size: FONT_SIZE_DEFAULT,
   styleProps: {},
   isInvalid: false,
 };

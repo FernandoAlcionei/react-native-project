@@ -17,3 +17,7 @@ export function loginError(msgDeErro) {
     payload: msgDeErro,
   };
 }
+
+export function logout() {
+  return { type: types.LOGOUT };
+}

@@ -5,7 +5,7 @@ import Button from '../index';
 const props = {
   onPress: () => {},
   title: '',
-  id: 'button',
+  id: 'button-app',
 };
 
 const getWrapper = () => mount(<Button {...props} />);
@@ -27,18 +27,18 @@ describe('Teste do componente Button', () => {
     wrapper.setProps({ title });
     wrapper.update();
 
-    const result = wrapper.find('#button').first().text();
+    const result = wrapper.find('#button-app').first().text();
 
     expect(result).toBe(title);
   });
 
-  it('O componente deve executar a função quando for clicado', () => {
+  it('O componente deve executar a prop "onPress" quando for clicado', () => {
     const onPress = jest.fn();
 
     wrapper.setProps({ onPress });
     wrapper.update();
 
-    wrapper.find('#button').first().props().onPress();
+    wrapper.find('#button-app').first().props().onPress();
 
     expect(onPress).toHaveBeenCalledTimes(1);
   });

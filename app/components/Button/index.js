@@ -10,14 +10,14 @@ class Button extends Component {
   }
 
   render() {
-    const { onPress, styleProps, title, heightStyle, widthStyle, positionBottom } = this.props;
+    const { onPress, styleProps, title, height, width, positionBottom } = this.props;
 
     return (
       <TouchableOpacity
         style={[
           {
-            width: widthStyle,
-            height: heightStyle,
+            width,
+            height,
             ...styles.button,
             ...styleProps,
           },
@@ -37,14 +37,14 @@ Button.propTypes = {
   onPress: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
   styleProps: PropTypes.object,
-  widthStyle: PropTypes.number,
-  heightStyle: PropTypes.number,
+  width: PropTypes.number,
+  height: PropTypes.number,
   positionBottom: PropTypes.bool,
 };
 
 Button.defaultProps = {
-  widthStyle: undefined,
-  heightStyle: undefined,
+  width: undefined,
+  height: undefined,
   styleProps: {},
   positionBottom: false,
 };

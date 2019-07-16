@@ -3,7 +3,7 @@ import AppStyles from '../../config/styles';
 
 const {
   color: { COLOR_PRIMARY, COLOR_WHITE },
-  fontSizes: { FONT_SIZE_BUTTON },
+  fontSizes: { FONT_SIZE_DEFAULT },
 } = AppStyles;
 
 const styles = StyleSheet.create({
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     margin: 10,
   },
   title: {
-    fontSize: FONT_SIZE_BUTTON,
+    fontSize: FONT_SIZE_DEFAULT,
     color: COLOR_WHITE,
   },
 });

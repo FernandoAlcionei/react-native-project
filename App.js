@@ -6,6 +6,8 @@ import configureStore from './app/store';
 
 const { persistor, store } = configureStore();
 
+console.disableYellowBox = true;
+
 export default class App extends React.Component {
   constructor(props) {
     super(props);

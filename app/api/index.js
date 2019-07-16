@@ -1,7 +1,7 @@
 import apisauce from 'apisauce';
 import ApiConstants from './ApiConstants';
 
-const { BASE_URL, LOGIN } = ApiConstants;
+const { BASE_URL, LOGIN, FAZENDAS, AREAS } = ApiConstants;
 
 const create = () => {
   const api = apisauce.create({
@@ -21,7 +21,15 @@ const create = () => {
     })
   );
 
-  return { login };
+  const getFazendas = filtro => api.get(`${FAZENDAS}/${JSON.stringify(filtro)}`);
+
+  const getAreas = () => api.get(AREAS);
+
+  return {
+    login,
+    getFazendas,
+    getAreas,
+  };
 };
 
 export default { create };
